@@ -44,21 +44,29 @@
     </section>
 
     <section id="en-vivo">
-        <div class="container">
-            <h2>📻 Escucha En Vivo</h2>
+        <div id="radio-container">
+    <button onclick="cargarRadio()" class="btn btn-radio">
+        <i class="fas fa-play"></i> Reproducir Radio en Vivo
+    </button>
+    <div id="reproductor"></div>
+</div>
+
+<script>
+    function cargarRadio() {
+        document.getElementById('reproductor').innerHTML = `
             <iframe
                 src="https://lavoz23.radio12345.com"
                 width="100%"
                 height="200"
                 frameborder="0"
                 scrolling="no"
-                title="La Frecuencia de Carlos - Radio en Vivo"
-                style="border-radius: 8px;">
+                title="La Frecuencia de Carlos"
+                style="border-radius: 8px; margin-top: 15px;">
             </iframe>
-            <a href="https://lavoz23.radio12345.com" target="_blank" class="btn btn-radio">
-                <i class="fas fa-external-link-alt"></i> Abrir reproductor externo
-            </a>
-        </div>
+        `;
+        document.querySelector('button').style.display = 'none';
+    }
+</script>
     </section>
 
     <section id="blog-tech">
